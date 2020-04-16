@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tickets.v1.SpanishConfiguration;
 
-namespace Tickets.v1
+namespace Tickets.v1.Countries
 {
     public abstract class CountryFactory
     {
@@ -21,7 +22,7 @@ namespace Tickets.v1
 		{
 
 		}
-		public abstract Menu CreateMenu();
-        public  abstract Ticket CreateTicket();
+		public abstract Menu GetMenu();
+        public  abstract Ticket GetTicket();
     }
 }

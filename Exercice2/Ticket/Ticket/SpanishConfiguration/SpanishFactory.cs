@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tickets.v1.Countries;
 
-namespace Tickets.v1
+namespace Tickets.v1.SpanishConfiguration
 {
     public class SpanishFactory : CountryFactory
     {
-        public override Menu CreateMenu()
+        public override Menu GetMenu()
         {
             throw new NotImplementedException();
         }
 
-        public override Ticket CreateTicket()
+        public override Ticket GetTicket()
         {
             throw new NotImplementedException();
         }

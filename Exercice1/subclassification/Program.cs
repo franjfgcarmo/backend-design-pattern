@@ -12,12 +12,13 @@ namespace FactoryMethod
 		{
 			// ...
 
-			int code = IO.Instance().ReadInt("Introduzca el código: ");
+			int code = IO.Instance().ReadInt("Introduzca el número 1: ");
 			// ...
-			int amount = IO.Instance().ReadInt("Introduzca la cantidad: ");
+			int amount = IO.Instance().ReadInt("Introduzca el número 2: ");
 			//...
-			IO.Instance().Writeln("Código: " + code);
-			IO.Instance().Writeln("Cantidad: " + amount);
+			var total = code + amount;
+			IO.Instance().Writeln("Total = " + total);
+			//IO.Instance().Writeln("Cantidad: " + amount);
 			Console.ReadKey();
 
 		}

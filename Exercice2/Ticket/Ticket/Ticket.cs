@@ -8,5 +8,9 @@ namespace Tickets.v1
 {
     public class Ticket
     {
+        internal void Close()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

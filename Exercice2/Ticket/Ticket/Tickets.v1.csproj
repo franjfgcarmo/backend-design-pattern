@@ -43,17 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountryFactory.cs" />
-    <Compile Include="FrenchFactory.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="Countries\CountryFactory.cs" />
+    <Compile Include="FrenchConfiguration\FrenchFactory.cs" />
+    <Compile Include="FrenchConfiguration\FrenchMenu.cs" />
+    <Compile Include="Menus\CancellationLineCommand.cs" />
+    <Compile Include="Menus\Command.cs" />
+    <Compile Include="Menus\ExitCommand.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Menus\RepetitionLineCommand.cs" />
+    <Compile Include="Menus\ReturnLineCommand.cs" />
+    <Compile Include="Menus\SaleLineCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpanishFactory.cs" />
+    <Compile Include="SpanishConfiguration\SpanishFactory.cs" />
+    <Compile Include="SpanishConfiguration\SpanishMenu.cs" />
     <Compile Include="Supermarket.cs" />
     <Compile Include="Ticket.cs" />
+    <Compile Include="Utils\ClosedInterval.cs" />
+    <Compile Include="Utils\ClosedIntervalView.cs" />
+    <Compile Include="Utils\IO.cs" />
+    <Compile Include="Utils\LimitedIntDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
