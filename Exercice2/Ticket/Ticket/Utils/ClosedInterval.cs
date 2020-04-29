@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Tickets.v1.Utils
+namespace TPV.v1.Utils
 {
     public class ClosedInterval
     {

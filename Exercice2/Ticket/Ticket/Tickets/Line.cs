@@ -1,4 +1,6 @@
-﻿namespace Tickets.v1.Tickets
+﻿using TPV.v1.Tickets;
+
+namespace TPV.v1.Tickets
 {
     public abstract class Line
     {

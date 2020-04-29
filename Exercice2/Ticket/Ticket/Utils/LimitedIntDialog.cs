@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Tickets.v1.Utils
+namespace TPV.v1.Utils
 {
-	public class LimitedIntDialog
-    {
+    public class LimitedIntDialog
+	{
 		private static LimitedIntDialog limitedIntDialog;
 
 		public static LimitedIntDialog Instance()
@@ -21,7 +21,7 @@ namespace Tickets.v1.Utils
 
 		}
 
-		public int Read(String title, int min, int max)
+		public int Read(string title, int min, int max)
 		{
 			Debug.Assert(title != null);
 			ClosedInterval limits = new ClosedInterval(min, max);
@@ -31,7 +31,7 @@ namespace Tickets.v1.Utils
 			bool ok;
 			do
 			{
-				value =IO.Instance().ReadInt(title + " " + limitsView + ": ");
+				value = IO.Instance().ReadInt(title + " " + limitsView + ": ");
 				ok = limits.Includes(value);
 				if (!ok)
 				{
@@ -41,9 +41,9 @@ namespace Tickets.v1.Utils
 			return value;
 		}
 
-		public int Read(String title, int max)
+		public int Read(string title, int max)
 		{
-			return this.Read(title, 1, max);
+			return Read(title, 1, max);
 		}
 	}
 }

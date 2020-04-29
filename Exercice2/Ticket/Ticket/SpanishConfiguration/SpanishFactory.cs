@@ -1,14 +1,14 @@
 ﻿using System;
-using Tickets.v1.Countries;
-using Tickets.v1.Tickets;
+using TPV.v1.Countries;
 
-namespace Tickets.v1.SpanishConfiguration
+namespace TPV.v1.SpanishConfiguration
 {
     public class SpanishFactory : CountryFactory
     {
-        public SpanishFactory() {
+        public SpanishFactory()
+        {
             Menu = new SpanishMenu();
-            this.ticketBuilder = new SpanishTicketBuilder();
+            // this.ticketBuilder = new SpanishTicketBuilder();
         }
     }
 }

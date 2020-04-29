@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Tickets.v1.Tickets
+namespace TPV.v1.Tickets
 {
     public class Ticket
     {
         private readonly Header _header;
         private readonly List<Line> _lineList;
         private readonly Footer _footer;
-        private  TicketVisitor _lineTicketOperation;
-        private  TicketVisitor _globalTicketOperation;
+        private TicketVisitor _lineTicketOperation;
+        private TicketVisitor _globalTicketOperation;
         public Ticket(Header header, Footer footer)
         {
             _header = header;
@@ -30,7 +30,7 @@ namespace Tickets.v1.Tickets
         public void Add(Line line)
         {
             _lineList.Add(line);
-           line.Accept(_lineTicketOperation);
+            line.Accept(_lineTicketOperation);
         }
         public void Close()
         {
@@ -43,7 +43,7 @@ namespace Tickets.v1.Tickets
             _footer.Accept(_globalTicketOperation);
         }
 
-        public int Lines()=> _lineList.Count();
+        public int Lines() => _lineList.Count();
 
 
         public Line GetLine(int number) => _lineList[number];

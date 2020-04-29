@@ -1,6 +1,7 @@
 ﻿using System;
+using TPV.v1.Tickets;
 
-namespace Tickets.v1.Tickets
+namespace TPV.v1.Tickets
 {
     public class Header
     {

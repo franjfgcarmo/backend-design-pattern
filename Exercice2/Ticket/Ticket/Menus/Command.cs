@@ -1,14 +1,16 @@
-﻿using Tickets.v1.Tickets;
+﻿using TPV.v1.Tickets;
 
-namespace Tickets.v1.Menus
+namespace TPV.v1.Menus
 {
     public abstract class Command
     {
         public Ticket Ticket { set; protected get; }
         private string title;
         protected Command(string title) { }
-        public string Title { 
-            get{
+        public string Title
+        {
+            get
+            {
                 return title;
             }
         }

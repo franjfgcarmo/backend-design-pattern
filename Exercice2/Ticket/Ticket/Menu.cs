@@ -1,24 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Tickets.v1.Menus;
-using Tickets.v1.Tickets;
-using Tickets.v1.Utils;
+using TPV.v1.Menus;
+using TPV.v1.Tickets;
+using TPV.v1.Utils;
 
-namespace Tickets.v1
+namespace TPV.v1
 {
     public abstract class Menu
-    {
-        protected List<Command> commands;
-        private ExitCommand exitCommand;
-        public Menu() {
-            commands = new List<Command>();
-            SetCommand();
-            exitCommand = new ExitCommand();
-            commands.Add(exitCommand);
-        }
-        
-        //Template Method
-        protected abstract void SetCommand();
+	{
+		protected List<Command> commands;
+		private ExitCommand exitCommand;
+		public Menu()
+		{
+			commands = new List<Command>();
+			SetCommand();
+			exitCommand = new ExitCommand();
+			commands.Add(exitCommand);
+		}
+
+		//Template Method
+		protected abstract void SetCommand();
 
 
 		protected void Set(Ticket ticket)
@@ -26,17 +27,17 @@ namespace Tickets.v1
 			foreach (var command in commands)
 			{
 				command.Set(ticket);
-			}		
+			}
 		}
 
 		public void Execute(Ticket ticket)
 		{
-			this.Set(ticket);
+			Set(ticket);
 			exitCommand.Reset();
 			do
 			{
-				this.Write();
-				int option = this.GetOption();
+				Write();
+				int option = GetOption();
 				commands[option].Execute();
 			} while (!exitCommand.Closed);
 		}
@@ -49,7 +50,7 @@ namespace Tickets.v1
 			for (int i = 0; i < commands.Count(); i++)
 			{
 				IO.Instance().Writeln(
-						(i + 1) + ". " + commands[i].Title);
+						i + 1 + ". " + commands[i].Title);
 			}
 		}
 

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{683DD7D8-A3B8-4DEB-8BA3-24EA84C0F8AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Tickets.v1</RootNamespace>
-    <AssemblyName>Tickets.v1</AssemblyName>
+    <RootNamespace>TPV.v1</RootNamespace>
+    <AssemblyName>TPV.v1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
     <Compile Include="Countries\TicketBuilder.cs" />
     <Compile Include="FrenchConfiguration\FrenchFactory.cs" />
     <Compile Include="FrenchConfiguration\FrenchMenu.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Operations\PriceCalculatorOperation.cs" />
     <Compile Include="Operations\TicketOperation.cs" />
     <Compile Include="SpanishConfiguration\SpanishTicketBuilder.cs" />
@@ -59,7 +60,6 @@
     <Compile Include="Menus\CancellationLineCommand.cs" />
     <Compile Include="Menus\Command.cs" />
     <Compile Include="Menus\ExitCommand.cs" />
-    <Compile Include="Menus\Menu.cs" />
     <Compile Include="Menus\RepetitionLineCommand.cs" />
     <Compile Include="Menus\ReturnLineCommand.cs" />
     <Compile Include="Menus\SaleLineCommand.cs" />

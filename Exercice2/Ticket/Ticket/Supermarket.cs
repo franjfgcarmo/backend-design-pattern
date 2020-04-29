@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tickets.v1.Countries;
-using Tickets.v1.Tickets;
+using TPV.v1.Countries;
+using TPV.v1.Tickets;
 
-namespace Tickets.v1
+namespace TPV.v1
 {
     public class Supermarket
-    {        
+    {
         private const double CLOSING_TIME = 20.0;
         private Menu menu;
 
         public Supermarket()
         {
-            menu = CountryFactory.Instance().Menu();
+            menu = CountryFactory.Instance().Menu;
         }
-        public void Sell() {
+        public void Sell()
+        {
             Clock clock = new Clock();
             bool close = false;
             do

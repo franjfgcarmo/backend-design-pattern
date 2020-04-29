@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tickets.v1
+namespace TPV.v1
 {
     internal class Clock
     {

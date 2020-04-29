@@ -1,19 +1,20 @@
 ﻿using System;
 
-namespace Tickets.v1.Utils
+namespace TPV.v1.Utils
 {
 	public class IO
-    {
-        private static IO _io;
-        public static IO Instance()
-        {
-            if(_io !=null) {
-                _io= new IO();
-            }
-            return _io;
-        }
-        private IO() { }
-		public string ReadString(String title)
+	{
+		private static IO _io;
+		public static IO Instance()
+		{
+			if (_io != null)
+			{
+				_io = new IO();
+			}
+			return _io;
+		}
+		private IO() { }
+		public string ReadString(string title)
 		{
 			string input = null;
 			var ok = false;

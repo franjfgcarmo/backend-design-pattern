@@ -1,11 +1,11 @@
-﻿using Tickets.v1.Tickets;
-using Tickets.v1.Utils;
+﻿using TPV.v1.Tickets;
+using TPV.v1.Utils;
 
-namespace Tickets.v1.Menus
+namespace TPV.v1.Menus
 {
     public class SaleLineCommand : Command
     {
-        
+
         public SaleLineCommand() : base("Linea de venta")
         {
         }

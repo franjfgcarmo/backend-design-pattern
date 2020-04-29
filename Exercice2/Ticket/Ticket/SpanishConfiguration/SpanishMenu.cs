@@ -1,6 +1,6 @@
-﻿using Tickets.v1.Menus;
+﻿using TPV.v1.Menus;
 
-namespace Tickets.v1.SpanishConfiguration
+namespace TPV.v1.SpanishConfiguration
 {
     public class SpanishMenu : Menu
     {

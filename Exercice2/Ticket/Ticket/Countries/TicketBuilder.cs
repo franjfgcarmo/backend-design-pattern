@@ -1,12 +1,12 @@
 ﻿using System;
-using Tickets.v1.Operations;
-using Tickets.v1.Tickets;
-using Tickets.v1.Utils;
+using TPV.v1.Operations;
+using TPV.v1.Tickets;
+using TPV.v1.Utils;
 
-namespace Tickets.v1.Countries
+namespace TPV.v1.Countries
 {
     public abstract class TicketBuilder
-    {
+	{
 		private static TicketBuilder ticketBuilder;
 
 		public static TicketBuilder instance()
@@ -17,7 +17,7 @@ namespace Tickets.v1.Countries
 				string nameTicketBuilder = "desingPatterns.exercises.n2.tickets.v5.spanishConfiguration.SpanishTicketBuilder";
 				try
 				{
-				
+
 					ticketBuilder = (TicketBuilder)Activator.CreateInstance(Type.GetType(nameTicketBuilder));
 				}
 				catch (Exception)

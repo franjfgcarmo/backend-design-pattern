@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Tickets.v1.Utils
+namespace TPV.v1.Utils
 {
-	public class ClosedIntervalView
-    {
+    public class ClosedIntervalView
+	{
 		private readonly string title;
 
 		private readonly ClosedInterval closedInterval;
@@ -20,7 +20,7 @@ namespace Tickets.v1.Utils
 		public void Writeln()
 		{
 			IO.Instance().Writeln(title + " " + ToString());
-			
+
 		}
 
 		public override string ToString()

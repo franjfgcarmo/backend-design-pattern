@@ -1,4 +1,4 @@
-﻿namespace Tickets.v1.Menus
+﻿namespace TPV.v1.Menus
 {
     public class ExitCommand : Command
     {
