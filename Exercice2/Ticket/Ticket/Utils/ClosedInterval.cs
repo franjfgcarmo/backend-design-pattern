@@ -15,6 +15,10 @@ namespace Tickets.v1.Utils
             this.max = max;
         }
 
+        public bool Includes(int value)
+        {
+            return min <= value && value <= max;
+        }
         public int GetMin()
         {
             return min;

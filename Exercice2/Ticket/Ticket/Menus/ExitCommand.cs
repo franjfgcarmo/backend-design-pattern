@@ -2,14 +2,20 @@
 {
     public class ExitCommand : Command
     {
+        public bool Closed { private set; get; }
         public ExitCommand() : base("salir")
         {
-           
+            Reset();
         }
 
-        protected override void Execute()
+        public override void Execute()
         {
-            throw new System.NotImplementedException();
+            Ticket.Close();
+            Closed = true;
+        }
+        public void Reset()
+        {
+            Closed = false;
         }
     }
 }

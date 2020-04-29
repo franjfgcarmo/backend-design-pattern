@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Tickets.v1.Menus;
+using Tickets.v1.Tickets;
+using Tickets.v1.Utils;
 
 namespace Tickets.v1
 {
@@ -13,14 +16,52 @@ namespace Tickets.v1
             exitCommand = new ExitCommand();
             commands.Add(exitCommand);
         }
-        public void Execute(Ticket ticket) {
-            var exit = false;
-            do
-            {
-
-            } while (!exit);
-        }
+        
         //Template Method
         protected abstract void SetCommand();
-    }
+
+
+		protected void Set(Ticket ticket)
+		{
+			foreach (var command in commands)
+			{
+				command.Set(ticket);
+			}		
+		}
+
+		public void Execute(Ticket ticket)
+		{
+			this.Set(ticket);
+			exitCommand.Reset();
+			do
+			{
+				this.Write();
+				int option = this.GetOption();
+				commands[option].Execute();
+			} while (!exitCommand.Closed);
+		}
+
+		private void Write()
+		{
+			IO.Instance().Writeln();
+			IO.Instance().Writeln();
+			IO.Instance().Writeln("---------------------");
+			for (int i = 0; i < commands.Count(); i++)
+			{
+				IO.Instance().Writeln(
+						(i + 1) + ". " + commands[i].Title);
+			}
+		}
+
+		private int GetOption()
+		{
+			return LimitedIntDialog.Instance()
+					.Read("Opción", 1, commands.Count()) - 1;
+		}
+
+		public bool IsClosed()
+		{
+			return exitCommand.Closed;
+		}
+	}
 }

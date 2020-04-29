@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tickets.v1.Countries;
+using Tickets.v1.Tickets;
 
 namespace Tickets.v1
 {
@@ -14,7 +15,7 @@ namespace Tickets.v1
 
         public Supermarket()
         {
-            menu = CountryFactory.Instance().GetMenu();
+            menu = CountryFactory.Instance().Menu();
         }
         public void Sell() {
             Clock clock = new Clock();

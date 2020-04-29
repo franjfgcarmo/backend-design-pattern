@@ -1,19 +1,20 @@
-﻿using Tickets.v1.Utils;
+﻿using Tickets.v1.Tickets;
+using Tickets.v1.Utils;
 
 namespace Tickets.v1.Menus
 {
     public class CancellationLineCommand : Command
     {
-        public CancellationLineCommand(string title) : base(title)
+        public CancellationLineCommand() : base("Linea de cancelación")
         {
 
         }
 
-        protected override void Execute()
+        public override void Execute()
         {
-            int max = Ticket.lines();
-            int line = LimitedIntDialog.instance().Read("Línea", max);
-            Ticket.add(new CancellationLine(line));
+            int max = Ticket.Lines();
+            int line = LimitedIntDialog.Instance().Read("Línea", max);
+            Ticket.Add(new CancellationLine(line));
         }
     }
 }

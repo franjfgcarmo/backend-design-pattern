@@ -1,18 +1,14 @@
 ﻿using System;
 using Tickets.v1.Countries;
+using Tickets.v1.Tickets;
 
 namespace Tickets.v1.SpanishConfiguration
 {
     public class SpanishFactory : CountryFactory
     {
-        public override Menu GetMenu()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Ticket GetTicket()
-        {
-            throw new NotImplementedException();
+        public SpanishFactory() {
+            Menu = new SpanishMenu();
+            this.ticketBuilder = new SpanishTicketBuilder();
         }
     }
 }

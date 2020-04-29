@@ -1,14 +1,19 @@
-﻿namespace Tickets.v1.Menus
+﻿using Tickets.v1.Tickets;
+using Tickets.v1.Utils;
+
+namespace Tickets.v1.Menus
 {
     public class ReturnLineCommand : Command
     {
-        public ReturnLineCommand(string title) : base(title)
+        public ReturnLineCommand() : base("Linea de devolución")
         {
         }
 
-        protected override void Execute()
+        public override void Execute()
         {
-            throw new System.NotImplementedException();
+            int id = LimitedIntDialog.Instance().Read("Código", 1000);
+            int units = LimitedIntDialog.Instance().Read("Unidades", 1000);
+            Ticket.Add(new ReturnLine(id, units));
         }
     }
 }

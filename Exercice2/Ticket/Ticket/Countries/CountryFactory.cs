@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tickets.v1.SpanishConfiguration;
+﻿using Tickets.v1.SpanishConfiguration;
+using Tickets.v1.Tickets;
 
 namespace Tickets.v1.Countries
 {
-    public abstract class CountryFactory
+	public abstract class CountryFactory
     {
 		private static CountryFactory countryFactory;
 		public static CountryFactory Instance()
@@ -22,7 +18,12 @@ namespace Tickets.v1.Countries
 		{
 
 		}
-		public abstract Menu GetMenu();
-        public  abstract Ticket GetTicket();
-    }
+		public Menu Menu { protected set; get; }
+		protected TicketBuilder ticketBuilder;
+
+		public Ticket getTicket()
+		{
+			return ticketBuilder.Build();
+		}
+	}
 }

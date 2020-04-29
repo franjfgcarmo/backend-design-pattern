@@ -25,7 +25,7 @@ namespace Tickets.v1.Utils
 					input = Console.ReadLine();
 					ok = true;
 				}
-				catch (Exception ex)
+				catch (Exception)
 				{
 					WriteError("de cadena de caracteres");
 				}

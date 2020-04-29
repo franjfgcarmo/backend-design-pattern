@@ -1,4 +1,6 @@
-﻿namespace Tickets.v1.Menus
+﻿using Tickets.v1.Tickets;
+
+namespace Tickets.v1.Menus
 {
     public abstract class Command
     {
@@ -10,6 +12,10 @@
                 return title;
             }
         }
-        protected abstract void Execute();
+        public abstract void Execute();
+        public void Set(Ticket ticket)
+        {
+            Ticket = ticket;
+        }
     }
 }

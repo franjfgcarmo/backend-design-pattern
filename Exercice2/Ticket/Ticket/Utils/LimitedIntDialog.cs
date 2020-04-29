@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tickets.v1.Utils
 {
-    public class LimitedIntDialog
+	public class LimitedIntDialog
     {
 		private static LimitedIntDialog limitedIntDialog;
 
-		public static LimitedIntDialog instance()
+		public static LimitedIntDialog Instance()
 		{
 			if (limitedIntDialog == null)
 			{
@@ -36,7 +32,7 @@ namespace Tickets.v1.Utils
 			do
 			{
 				value =IO.Instance().ReadInt(title + " " + limitsView + ": ");
-				ok = limits.includes(value);
+				ok = limits.Includes(value);
 				if (!ok)
 				{
 					limitsView.Writeln();

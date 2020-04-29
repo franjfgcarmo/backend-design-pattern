@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Tickets.v1.Tickets;
+using Tickets.v1.Utils;
 
 namespace Tickets.v1.Menus
 {
-    class SaleLineCommand : Command
+    public class SaleLineCommand : Command
     {
-        public SaleLineCommand(string title) : base(title)
+        
+        public SaleLineCommand() : base("Linea de venta")
         {
         }
-
-        protected override void Execute()
+        public override void Execute()
         {
-            throw new NotImplementedException();
+            int id = LimitedIntDialog.Instance().Read("Código", 1000);
+            int units = LimitedIntDialog.Instance().Read("Unidades", 1000);
+            Ticket.Add(new SaleLine(id, units));
         }
     }
 }

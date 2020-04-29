@@ -45,8 +45,17 @@
   <ItemGroup>
     <Compile Include="Clock.cs" />
     <Compile Include="Countries\CountryFactory.cs" />
+    <Compile Include="Countries\TicketBuilder.cs" />
     <Compile Include="FrenchConfiguration\FrenchFactory.cs" />
     <Compile Include="FrenchConfiguration\FrenchMenu.cs" />
+    <Compile Include="Operations\PriceCalculatorOperation.cs" />
+    <Compile Include="Operations\TicketOperation.cs" />
+    <Compile Include="SpanishConfiguration\SpanishTicketBuilder.cs" />
+    <Compile Include="Tickets\CancellationLine.cs" />
+    <Compile Include="Tickets\Footer.cs" />
+    <Compile Include="Tickets\Header.cs" />
+    <Compile Include="Tickets\IdLine.cs" />
+    <Compile Include="Tickets\Line.cs" />
     <Compile Include="Menus\CancellationLineCommand.cs" />
     <Compile Include="Menus\Command.cs" />
     <Compile Include="Menus\ExitCommand.cs" />
@@ -59,7 +68,12 @@
     <Compile Include="SpanishConfiguration\SpanishFactory.cs" />
     <Compile Include="SpanishConfiguration\SpanishMenu.cs" />
     <Compile Include="Supermarket.cs" />
-    <Compile Include="Ticket.cs" />
+    <Compile Include="Tickets\NumberLine.cs" />
+    <Compile Include="Tickets\RepetitionLine.cs" />
+    <Compile Include="Tickets\ReturnLine.cs" />
+    <Compile Include="Tickets\SaleLine.cs" />
+    <Compile Include="Tickets\Ticket.cs" />
+    <Compile Include="Tickets\TicketVisitor.cs" />
     <Compile Include="Utils\ClosedInterval.cs" />
     <Compile Include="Utils\ClosedIntervalView.cs" />
     <Compile Include="Utils\IO.cs" />

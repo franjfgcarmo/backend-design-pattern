@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Tickets.v1.Menus;
 
 namespace Tickets.v1.SpanishConfiguration
 {
@@ -6,7 +6,10 @@ namespace Tickets.v1.SpanishConfiguration
     {
         protected override void SetCommand()
         {
-            throw new NotImplementedException();
+            commands.Add(new SaleLineCommand());
+            commands.Add(new RepetitionLineCommand());
+            commands.Add(new ReturnLineCommand());
+            commands.Add(new CancellationLineCommand());
         }
     }
 }

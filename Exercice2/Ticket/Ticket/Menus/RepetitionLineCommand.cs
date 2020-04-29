@@ -1,14 +1,20 @@
-﻿namespace Tickets.v1.Menus
+﻿using Tickets.v1.Tickets;
+using Tickets.v1.Utils;
+
+namespace Tickets.v1.Menus
 {
     public class RepetitionLineCommand : Command
     {
-        public RepetitionLineCommand(string title) : base(title)
+
+        public RepetitionLineCommand() : base("Linea de repetición")
         {
         }
 
-        protected override void Execute()
+        public override void Execute()
         {
-            throw new System.NotImplementedException();
+            int max = Ticket.Lines();
+            int line = LimitedIntDialog.Instance().Read("Línea? ", max);
+            Ticket.Add(new RepetitionLine(line));
         }
     }
 }
