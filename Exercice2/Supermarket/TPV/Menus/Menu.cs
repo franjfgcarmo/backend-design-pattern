@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TPV.v1.Menus;
 using TPV.v1.Tickets;
 using TPV.v1.Utils;
 
-namespace TPV.v1
+namespace TPV.v1.Menus
 {
-    public abstract class Menu
+	//todo:voy por aquí.
+	public abstract class Menu
 	{
 		protected List<Command> commands;
 		private ExitCommand exitCommand;

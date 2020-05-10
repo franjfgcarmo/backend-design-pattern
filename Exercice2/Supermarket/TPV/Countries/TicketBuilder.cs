@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using TPV.v1.Operations;
 using TPV.v1.Tickets;
 using TPV.v1.Utils;
@@ -7,27 +8,42 @@ namespace TPV.v1.Countries
 {
     public abstract class TicketBuilder
 	{
-		private static TicketBuilder ticketBuilder;
+		private static TicketBuilder _ticketBuilder;
 
 		public static TicketBuilder instance()
 		{
-			if (ticketBuilder == null)
+			if (_ticketBuilder == null)
 			{
-				// TODO ficher configuración
-				string nameTicketBuilder = "desingPatterns.exercises.n2.tickets.v5.spanishConfiguration.SpanishTicketBuilder";
 				try
 				{
 
-					ticketBuilder = (TicketBuilder)Activator.CreateInstance(Type.GetType(nameTicketBuilder));
+					_ticketBuilder = (TicketBuilder)Activator.CreateInstance(Type.GetType(SingletonConfigure));
 				}
 				catch (Exception)
 				{
 					IO.Instance().Write("TicketBuilder desconocido");
 				}
 			}
-			return ticketBuilder;
+			return _ticketBuilder;
 		}
+		private static string SingletonConfigure
+		{
+			get
+			{
+				string line = "";
+				try
+				{
 
+					line = ConfigurationManager.AppSettings["TicketBuilder"];
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("IOException al leer: " + ex.Message);
+				}
+
+				return line;
+			}
+		}
 		protected TicketOperation lineTicketOperation;
 
 		protected TicketOperation globalTicketOperation;

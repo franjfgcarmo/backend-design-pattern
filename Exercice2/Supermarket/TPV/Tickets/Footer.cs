@@ -6,7 +6,7 @@ namespace TPV.v1.Tickets
     {
         public int TotalPrice { get; private set; }
 
-        public void Accept(TicketVisitor ticketVisitor) => ticketVisitor.Visit(this);
+        public void Accept(ITicketVisitor ticketVisitor) => ticketVisitor.Visit(this);
 
         public override string ToString() => $"Footer [totalPrice={TotalPrice}]";
     }

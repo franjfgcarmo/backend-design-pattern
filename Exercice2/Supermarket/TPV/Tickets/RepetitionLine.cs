@@ -8,7 +8,7 @@ namespace TPV.v1.Tickets
         {
         }
 
-        public override void Accept(TicketVisitor ticketVisitor) => ticketVisitor.Visit(this);
+        public override void Accept(ITicketVisitor ticketVisitor) => ticketVisitor.Visit(this);
         public override string ToString() => $"RepetitionLine " + base.ToString();
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace TPV.v1.Tickets
 {
-    public interface TicketVisitor
+    public interface ITicketVisitor
 	{
 		void Visit(Header head);
 

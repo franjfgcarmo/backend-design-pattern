@@ -8,7 +8,7 @@ namespace TPV.v1.Tickets
         {
         }
 
-        public override void Accept(TicketVisitor ticketVisitor)
+        public override void Accept(ITicketVisitor ticketVisitor)
         {
             ticketVisitor.Visit(this);
         }

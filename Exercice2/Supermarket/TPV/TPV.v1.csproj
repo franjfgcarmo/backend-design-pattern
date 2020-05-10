@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,11 +48,24 @@
     <Compile Include="Countries\CountryFactory.cs" />
     <Compile Include="Countries\TicketBuilder.cs" />
     <Compile Include="FrenchConfiguration\FrenchFactory.cs" />
+    <Compile Include="FrenchConfiguration\FrenchFooter.cs" />
+    <Compile Include="FrenchConfiguration\FrenchHead.cs" />
     <Compile Include="FrenchConfiguration\FrenchMenu.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="FrenchConfiguration\FrenchTicketBuilder.cs" />
+    <Compile Include="Menus\Menu.cs" />
+    <Compile Include="Operations\BackupOperation.cs" />
+    <Compile Include="Operations\ClientPrinterOperation.cs" />
+    <Compile Include="Operations\DisplayViewerOperation.cs" />
     <Compile Include="Operations\PriceCalculatorOperation.cs" />
+    <Compile Include="Operations\ScreenViewerOperation.cs" />
+    <Compile Include="Operations\TaxPrinterOperation.cs" />
+    <Compile Include="Operations\ThreeXTwoOfertOperation.cs" />
+    <Compile Include="Operations\TicketOperationComposite.cs" />
+    <Compile Include="Operations\TotalPriceCalculatorOperation.cs" />
+    <Compile Include="Stores\Store.cs" />
     <Compile Include="Operations\TicketOperation.cs" />
     <Compile Include="SpanishConfiguration\SpanishTicketBuilder.cs" />
+    <Compile Include="Stores\Product.cs" />
     <Compile Include="Tickets\CancellationLine.cs" />
     <Compile Include="Tickets\Footer.cs" />
     <Compile Include="Tickets\Header.cs" />
@@ -73,7 +87,7 @@
     <Compile Include="Tickets\ReturnLine.cs" />
     <Compile Include="Tickets\SaleLine.cs" />
     <Compile Include="Tickets\Ticket.cs" />
-    <Compile Include="Tickets\TicketVisitor.cs" />
+    <Compile Include="Tickets\ITicketVisitor.cs" />
     <Compile Include="Utils\ClosedInterval.cs" />
     <Compile Include="Utils\ClosedIntervalView.cs" />
     <Compile Include="Utils\IO.cs" />

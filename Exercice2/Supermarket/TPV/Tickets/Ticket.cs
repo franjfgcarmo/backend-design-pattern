@@ -8,20 +8,20 @@ namespace TPV.v1.Tickets
         private readonly Header _header;
         private readonly List<Line> _lineList;
         private readonly Footer _footer;
-        private TicketVisitor _lineTicketOperation;
-        private TicketVisitor _globalTicketOperation;
+        private ITicketVisitor _lineTicketOperation;
+        private ITicketVisitor _globalTicketOperation;
         public Ticket(Header header, Footer footer)
         {
             _header = header;
             _lineList = new List<Line>();
             _footer = footer;
         }
-        public void SetLineTicketOperation(TicketVisitor lineTicketOperation)
+        public void SetLineTicketOperation(ITicketVisitor lineTicketOperation)
         {
             _lineTicketOperation = lineTicketOperation;
         }
 
-        public void SetGlobalTicketOperation(TicketVisitor globalTickeOperation)
+        public void SetGlobalTicketOperation(ITicketVisitor globalTickeOperation)
         {
             _globalTicketOperation = globalTickeOperation;
         }
