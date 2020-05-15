@@ -8,6 +8,15 @@ namespace TPV.v1.Countries
     public abstract class CountryFactory
 	{
 		private static CountryFactory _countryFactory;
+		/// <summary>
+		/// Un singleton, se hace cuando se quiere que sea global y único. En este caso se ha hecho para que sea unico.
+		/// Según la teoría de abstract factory, se debería haber creado un CreateMenu y un CreateTicket, pero no se ha 
+		/// hecho porque lo patrones hay que retorcelos y adaptarlos a las necesidades.
+		/// Se han creado dos atributo: Menu y ticket, se han rellenado en la clase derivada .
+		/// El objetivo del abstract factory es que cada vez que le pidan un menú, es devolver uno menú, otro menú, otro menú, etc. En nuestro caso
+		/// en nuestro caso tenemos un menú que lo pedimos una vez.
+		/// </summary>
+		/// <returns></returns>
 		public static CountryFactory Instance()
 		{
 			if (_countryFactory == null)

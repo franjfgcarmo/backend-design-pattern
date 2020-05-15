@@ -5,7 +5,13 @@ using TPV.v1.Utils;
 
 namespace TPV.v1.Menus
 {
-	//todo:voy por aquí.
+	/// <summary>
+	/// Esta clase se hace por herencia y no por composición porque es sencilla y no queremos dinamismo,
+	/// es decir cuando se despliegue en un surpermercado, siempre va a ser español o frances, no va a
+	/// ser algunas veces español y otras Frances.
+	/// Los patrones tienden a composición, pero hacer aquí la composición no tiene sentido porque tendrías que 
+	/// crear una interfaz de la cual heredara menu....
+	/// </summary>
 	public abstract class Menu
 	{
 		//LISTA DE comandos
@@ -31,7 +37,10 @@ namespace TPV.v1.Menus
 				command.Set(ticket);
 			}
 		}
-
+		/// <summary>
+		/// Se le asignan todos los comandos del menú al ticket, dependiendo de su comfiguración.
+		/// </summary>
+		/// <param name="ticket"></param>
 		public void Execute(Ticket ticket)
 		{
 			Set(ticket);

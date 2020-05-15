@@ -26,6 +26,7 @@ namespace TPV.v1
                 Ticket ticket = CountryFactory.Instance().GetTicket();
                 //Abstract Factory
                 ticket.Close();
+                //Aquí se le dice al menú, ejecutaté con este ticket
                 menu.Execute(ticket);
 
             } while (!clock.IsNowOrLater(CLOSING_TIME));
