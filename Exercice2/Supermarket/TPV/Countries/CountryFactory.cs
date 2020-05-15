@@ -14,7 +14,7 @@ namespace TPV.v1.Countries
 			{
 				var country = SingletonConfigure;
 				try
-				{
+				{	
 					_countryFactory = (CountryFactory)(Activator.CreateInstance(Type.GetType($"TPV.v1.{country}")));
 				}
 				catch (Exception e)

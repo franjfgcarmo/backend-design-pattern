@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clock.cs" />
+    <Compile Include="Utils\Clock.cs" />
     <Compile Include="Countries\CountryFactory.cs" />
     <Compile Include="Countries\TicketBuilder.cs" />
     <Compile Include="FrenchConfiguration\FrenchFactory.cs" />
@@ -62,6 +62,8 @@
     <Compile Include="Operations\ThreeXTwoOfertOperation.cs" />
     <Compile Include="Operations\TicketOperationComposite.cs" />
     <Compile Include="Operations\TotalPriceCalculatorOperation.cs" />
+    <Compile Include="SpanishConfiguration\SpanishFooter.cs" />
+    <Compile Include="SpanishConfiguration\SpanishHead.cs" />
     <Compile Include="Stores\Store.cs" />
     <Compile Include="Operations\TicketOperation.cs" />
     <Compile Include="SpanishConfiguration\SpanishTicketBuilder.cs" />

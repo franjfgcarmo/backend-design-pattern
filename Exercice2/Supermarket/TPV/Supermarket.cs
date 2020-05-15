@@ -21,7 +21,6 @@ namespace TPV.v1
         public void Sell()
         {
             Clock clock = new Clock();
-            bool close = false;
             do
             {
                 Ticket ticket = CountryFactory.Instance().GetTicket();

@@ -8,12 +8,13 @@ namespace TPV.v1.Menus
 	//todo:voy por aquí.
 	public abstract class Menu
 	{
+		//LISTA DE comandos
 		protected List<Command> commands;
-		private ExitCommand exitCommand;
+		private ExitCommand exitCommand;//comando salir para todos los paises.
 		public Menu()
 		{
 			commands = new List<Command>();
-			SetCommand();
+			SetCommand();//este método es abstracto
 			exitCommand = new ExitCommand();
 			commands.Add(exitCommand);
 		}
@@ -24,6 +25,7 @@ namespace TPV.v1.Menus
 
 		protected void Set(Ticket ticket)
 		{
+			//a cada comando le dijo sobre que ticket se va ejecutar.
 			foreach (var command in commands)
 			{
 				command.Set(ticket);
@@ -37,11 +39,13 @@ namespace TPV.v1.Menus
 			do
 			{
 				Write();
-				int option = GetOption();
+				var option = GetOption();
 				commands[option].Execute();
 			} while (!exitCommand.Closed);
 		}
-
+		/// <summary>
+		/// Escribe los menú que han sido cargado para cada pais
+		/// </summary>
 		private void Write()
 		{
 			IO.Instance().Writeln();

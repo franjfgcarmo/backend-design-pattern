@@ -12,9 +12,7 @@ namespace TPV.v1.Operations
 
         public override void Visit(SaleLine saleLine)
         {
-            Console.WriteLine("SCR: Product " + saleLine.Id + " - "
-                            + saleLine.Units + "units : "
-                            + saleLine.Price + "eu");
+            Console.WriteLine($"SCR: Product {saleLine.Id} - {saleLine.Units}units : {saleLine.Price}eu");
         }
 
         public override void Visit(RepetitionLine repetitionLine)

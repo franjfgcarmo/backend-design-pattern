@@ -19,7 +19,7 @@ namespace TPV.v1.Utils
 
 		public void Writeln()
 		{
-			IO.Instance().Writeln(title + " " + ToString());
+			IO.Instance().Writeln($"{title} {ToString()}");
 
 		}
 

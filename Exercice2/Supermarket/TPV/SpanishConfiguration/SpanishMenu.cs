@@ -4,6 +4,7 @@ namespace TPV.v1.SpanishConfiguration
 {
     public class SpanishMenu : Menu
     {
+        //Se agrega los comandos que necesita cada pais.
         protected override void SetCommand()
         {
             commands.Add(new SaleLineCommand());

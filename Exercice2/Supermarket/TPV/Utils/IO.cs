@@ -73,25 +73,12 @@ namespace TPV.v1.Utils
 			return charValue;
 		}
 
-		public void Writeln()
-		{
-			Console.WriteLine();
-		}
+		public void Writeln() => Console.WriteLine();
 
-		public void Write(string @string)
-		{
-			Console.WriteLine(@string);
-		}
+		public void Write(string @string) => Console.WriteLine(@string);
 
-		public void Writeln(string @string)
-		{
-			Console.WriteLine(@string);
-		}
+		public void Writeln(string @string) => Console.WriteLine(@string);
 
-		private void WriteError(string formato)
-		{
-			Console.WriteLine("ERROR DE FORMATO! "
-					+ "Introduzca un valor con formato " + formato + ".");
-		}
+		private void WriteError(string formato) => Console.WriteLine($"ERROR DE FORMATO! Introduzca un valor con formato {formato}.");
 	}
 }

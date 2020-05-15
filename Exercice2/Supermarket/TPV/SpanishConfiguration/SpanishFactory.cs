@@ -8,7 +8,7 @@ namespace TPV.v1.SpanishConfiguration
         public SpanishFactory()
         {
             Menu = new SpanishMenu();
-            // this.ticketBuilder = new SpanishTicketBuilder();
+            ticketBuilder = new SpanishTicketBuilder();
         }
     }
 }

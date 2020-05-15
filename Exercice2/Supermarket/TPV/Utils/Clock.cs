@@ -10,7 +10,7 @@ namespace TPV.v1
 
         internal bool IsNowOrLater(double cLOSING_TIME)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
