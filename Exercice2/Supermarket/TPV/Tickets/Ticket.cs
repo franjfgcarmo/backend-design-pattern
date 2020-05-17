@@ -25,6 +25,11 @@ namespace TPV.v1.Tickets
         {
             _globalTicketOperation = globalTickeOperation;
         }
+        #region [Visitor]
+        /*
+         * Cuando se creaa la cabecera, el pie y cada linea, se llama al pratrón visitor.
+         * Acepta la visitor
+         */
         public void Open() => _header.Accept(_lineTicketOperation);
 
         public void Add(Line line)
@@ -34,6 +39,7 @@ namespace TPV.v1.Tickets
         }
         public void Close()
         {
+            //Acept the global operations.
             _footer.Accept(_lineTicketOperation);
             _header.Accept(_globalTicketOperation);
             foreach (var line in _lineList)
@@ -42,6 +48,8 @@ namespace TPV.v1.Tickets
             }
             _footer.Accept(_globalTicketOperation);
         }
+        #endregion
+
 
         public int Lines() => _lineList.Count();
 

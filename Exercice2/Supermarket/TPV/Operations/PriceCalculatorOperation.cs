@@ -3,6 +3,9 @@ using TPV.v1.Tickets;
 
 namespace TPV.v1.Operations
 {
+    /// <summary>
+    /// Calculate the price of the products.
+    /// </summary>
     public class PriceCalculatorOperation : TicketOperation
     {
         public override void Visit(SaleLine saleLine)

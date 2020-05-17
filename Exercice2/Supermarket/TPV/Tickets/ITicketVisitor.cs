@@ -1,6 +1,9 @@
 ﻿
 namespace TPV.v1.Tickets
 {
+	/// <summary>
+	/// Patrón visitor, cada una del parte que tiene que visitar: cabecera, pie, cada linea.
+	/// </summary>
     public interface ITicketVisitor
 	{
 		void Visit(Header head);
