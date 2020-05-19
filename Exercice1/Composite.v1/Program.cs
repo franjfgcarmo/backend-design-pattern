@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Visitor.ObjectStructure
+namespace Composite.v1
 {
     class Program
     {
