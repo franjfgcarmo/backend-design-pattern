@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _Visitor.Iterator
+﻿namespace _Visitor.Iterator
 {
     public interface IVisitor
     {
+        void VisitObjectStructure(ObjectStructure objectStructure);
+
         void VisitConcreteElementA(ConcreteElementA concreteElementA);
 
         void VisitConcreteElementB(ConcreteElementB concreteElementB);

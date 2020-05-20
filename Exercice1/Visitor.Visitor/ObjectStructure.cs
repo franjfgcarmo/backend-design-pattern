@@ -18,10 +18,14 @@ namespace _Visitor.Iterator
 			elementList.Add(element);
 		}
 
-		public virtual IEnumerator<IElement> Iterator()
+		public virtual List<IElement> ElementList
 		{
-			return elementList.GetEnumerator();
+			get
+			{
+				return elementList;
+			}
 		}
+
 
 	}
 }
