@@ -15,6 +15,10 @@ namespace _Visitor.Visitor
             Console.WriteLine("visitConcreteElementB by ConcreteVisitorA");
         }
 
+        /// <summary>
+        /// Aquí se podría a ver defino cómo se quiere visitar, número pares, cambiar order
+        /// </summary>
+        /// <param name="objectStructure"></param>
         public void VisitObjectStructure(ObjectStructure objectStructure)
         {
             foreach (var element in objectStructure.ElementList)

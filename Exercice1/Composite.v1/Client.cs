@@ -24,6 +24,7 @@ namespace Composite.v1
 			//...
 			component = leaf2;
 			component.Operation();
+			Console.WriteLine("------------------");
 			//...
 			component = composite2;
 			component.Operation();

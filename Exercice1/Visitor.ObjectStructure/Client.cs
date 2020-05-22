@@ -6,7 +6,11 @@ namespace _Visitor.ObjectStructure
 {
 	public class Client
 	{
-
+		/// <summary>
+		/// Hace uso del doble despacho. Aquí la estrutura de objecto es quien marca la pauta para las visitas.
+		/// Esta forma de implantarlo, sólo es la estructura de objetos quiente decide por lo que sólo es necesario
+		/// implantarlo una vez.
+		/// </summary>
 		private void Exec()
 		{
 			//...
@@ -18,8 +22,10 @@ namespace _Visitor.ObjectStructure
 			//...
 			objectStructure.Accept(new ConcreteVisitorA());
 			//...
-			objectStructure.Accept(new ConcreteVisitorA());
+			Console.WriteLine("-----------------------------------------------");
+			objectStructure.Accept(new ConcreteVisitorB());
 			//...
+			Console.ReadLine();
 		}
 
 		public static void Main(string[] args)

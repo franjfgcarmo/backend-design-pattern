@@ -3,6 +3,9 @@ using TPV.v1.Tickets;
 
 namespace TPV.v1.Operations
 {
+    /// <summary>
+    /// En esta clase se implemente el composite. No se implementa el método remove del patrón porque no se necesita.
+    /// </summary>
     public class TicketOperationComposite : TicketOperation
     {
         private List<TicketOperation> ticketOperationList;
@@ -11,12 +14,18 @@ namespace TPV.v1.Operations
         {
             ticketOperationList = new List<TicketOperation>();
         }
-
+        /// <summary>
+        /// Agrega el listado de operaciones.
+        /// </summary>
+        /// <param name="ticketOperation"></param>
         public void Add(TicketOperation ticketOperation)
         {
             ticketOperationList.Add(ticketOperation);
         }
-
+        /// <summary>
+        /// Asocio las lineas al ticket
+        /// </summary>
+        /// <param name="ticket"></param>
         public override void Set(Ticket ticket)
         {
             base.Set(ticket);
@@ -25,7 +34,13 @@ namespace TPV.v1.Operations
                 ticketOperation.Set(ticket);
             }
         }
-
+        #region [Composite]
+        /*
+        * Aqui si me visita una linea de cabecera, le dijo a todas mis operaciones que visiten la cabecera,
+        * si me visita una linea de venta, le digo a todas mis operaciones que visiten la linea de venta.....
+        * ......
+        */
+        /// <param name="head"></param>
         public override void Visit(Header head)
         {
             foreach (var ticketOperation in ticketOperationList)
@@ -73,5 +88,7 @@ namespace TPV.v1.Operations
                 ticketOperation.Visit(footer);
             }
         }
+        #endregion
+
     }
 }

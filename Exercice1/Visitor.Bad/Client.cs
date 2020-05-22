@@ -15,7 +15,7 @@ namespace _Visitor.Bad
 			objectStructure.add(new ConcreteElementA());
 			objectStructure.add(new ConcreteElementB());
 			objectStructure.add(new ConcreteElementA());
-			//...
+			//...Quiero evitar lanzar los mensajes a fuego.
 			objectStructure.concreteA();
 			//...
 			objectStructure.concreteB();

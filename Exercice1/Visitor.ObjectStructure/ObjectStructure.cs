@@ -15,7 +15,10 @@ namespace _Visitor.ObjectStructure
 		{
 			elementList.Add(element);
 		}
-
+		/// <summary>
+		/// Permite aceptar cualquier visitor, de esta forma se evita que esta clase crezca.
+		/// </summary>
+		/// <param name="visitor"></param>
 		public virtual void Accept(IVisitor visitor)
 		{
 			foreach (var element in elementList)
