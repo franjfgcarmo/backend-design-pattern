@@ -16,7 +16,7 @@ namespace TPV.v1.Countries
 			{
 				try
 				{
-
+					//dependiendo de la configuración de un pais.
 					_ticketBuilder = (TicketBuilder)Activator.CreateInstance(Type.GetType(SingletonConfigure));
 				}
 				catch (Exception)
@@ -44,6 +44,7 @@ namespace TPV.v1.Countries
 				return line;
 			}
 		}
+
 		protected TicketOperation lineTicketOperation;
 
 		protected TicketOperation globalTicketOperation;

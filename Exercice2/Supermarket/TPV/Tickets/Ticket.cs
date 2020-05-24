@@ -16,6 +16,10 @@ namespace TPV.v1.Tickets
             _lineList = new List<Line>();
             _footer = footer;
         }
+        #region [Strategy]
+        /* Tenemos que meter dos operaciones, las de linas y las globales, entonces eso es una estrategía.
+         * 
+         */
         public void SetLineTicketOperation(ITicketVisitor lineTicketOperation)
         {
             _lineTicketOperation = lineTicketOperation;
@@ -25,6 +29,8 @@ namespace TPV.v1.Tickets
         {
             _globalTicketOperation = globalTickeOperation;
         }
+        #endregion
+
         #region [Visitor]
         /*
          * Cuando se creaa la cabecera, el pie y cada linea, se llama al pratrón visitor.

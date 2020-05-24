@@ -58,7 +58,11 @@ namespace TPV.v1.Countries
 		}
 		public Menu Menu { protected set; get; }
 		protected TicketBuilder ticketBuilder;
-
+		/// <summary>
+		/// Se obtiene el ticket, el cual es inicializado en cada factoria(SpanishFactory)
+		/// Con el método Build, se construye.
+		/// </summary>
+		/// <returns></returns>
 		public Ticket GetTicket()
 		{
 			return ticketBuilder.Build();

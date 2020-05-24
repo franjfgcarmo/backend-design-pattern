@@ -10,6 +10,7 @@ namespace TPV.v1.SpanishConfiguration
 	{
 		public SpanishTicketBuilder()
 		{
+			//Configuro las operacion que va a tener: global y de linea
 			TicketOperationComposite lineTicketOperationComposite = new TicketOperationComposite();
 			lineTicketOperationComposite.Add(new PriceCalculatorOperation());
 			lineTicketOperationComposite.Add(new ClientPrinterOperation());
@@ -24,6 +25,7 @@ namespace TPV.v1.SpanishConfiguration
 
 		public override Ticket Build()
 		{
+			//Construyo el ticket y lo devuelvo.
 			Ticket ticket = new Ticket(new SpanishHead(), new SpanishFooter());
 			ticket.SetLineTicketOperation(lineTicketOperation);
 			ticket.SetGlobalTicketOperation(lineTicketOperation);
