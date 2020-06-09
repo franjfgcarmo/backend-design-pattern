@@ -9,7 +9,7 @@ namespace Poker.Gambles
 
 		protected internal GambleType gambleType;
 
-		private IList<Value> orderedValues;
+		private readonly IList<Value> orderedValues;
 
 		public Gamble(GambleType gambleType, IList<Value> orderedValues)
 		{
@@ -19,8 +19,8 @@ namespace Poker.Gambles
 
 		public virtual Gamble whoIsWinner(Gamble gamble)
 		{
-			Gamble winner = null;
-			if (this.gambleType.Equals(gamble.gambleType))
+            Gamble winner;
+            if (this.gambleType.Equals((object)gamble.gambleType))
 			{
 				winner = this.whoIsWinnerWithSameGambleType(gamble);
 			}
@@ -43,22 +43,19 @@ namespace Poker.Gambles
 			{
 				i++;
 			}
-			if (this.orderedValues[i].greater(orderedValues[i]))
+			if (this.orderedValues[i].Greater(orderedValues[i]))
 			{
 				return this;
 			}
-			else if (orderedValues[i].greater(this.orderedValues[i]))
+			else if (orderedValues[i].Greater(this.orderedValues[i]))
 			{
 				return gamble;
 			}
 			return null;
 		}
 
-		public override string ToString()
-		{
-			return "Gamble [gambleType=" + gambleType.ToString() + ", orderedValues=" + orderedValues + "]";
-		}
+        public override string ToString() => $"Gamble [gambleType={gambleType.ToString()}, orderedValues={orderedValues}]";
 
-	}
+    }
 
 }

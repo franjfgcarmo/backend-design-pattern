@@ -5,9 +5,9 @@ namespace Poker.Utils
 	public class ClosedInterval
 	{
 
-		private int min;
+		private readonly int min;
 
-		private int max;
+		private readonly int max;
 
 		public ClosedInterval(int min, int max)
 		{
@@ -16,27 +16,15 @@ namespace Poker.Utils
 			this.max = max;
 		}
 
-		public virtual bool includes(int value)
+		public virtual bool Includes(int value)
 		{
 			return min <= value && value <= max;
 		}
 
-		internal virtual int Min
-		{
-			get
-			{
-				return min;
-			}
-		}
+        internal virtual int Min => min;
 
-		internal virtual int Max
-		{
-			get
-			{
-				return max;
-			}
-		}
+        internal virtual int Max => max;
 
-	}
+    }
 
 }

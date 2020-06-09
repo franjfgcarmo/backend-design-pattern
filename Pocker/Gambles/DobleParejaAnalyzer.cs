@@ -10,17 +10,17 @@ namespace Poker.Gambles
 		{
 		}
 
-		public override Gamble getGamble(PlayerStatistics playerStatistics)
+		public override Gamble GetGamble(PlayerStatistics playerStatistics)
 		{
-			if (playerStatistics.hasTwoPairs())
+			if (playerStatistics.HasTwoPairs())
 			{
-				IList<Value> orderedValues = playerStatistics.getOrderedValues(2);
-				((List<Value>)orderedValues).AddRange(playerStatistics.getOrderedValues(1));
+				IList<Value> orderedValues = playerStatistics.GetOrderedValues(2);
+				((List<Value>)orderedValues).AddRange(playerStatistics.GetOrderedValues(1));
 				return new Gamble(GambleType.DOBLE_PAREJA, orderedValues);
 			}
 			else
 			{
-				return nextAnalyzer.getGamble(playerStatistics);
+				return nextAnalyzer.GetGamble(playerStatistics);
 			}
 		}
 

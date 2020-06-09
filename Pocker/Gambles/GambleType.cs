@@ -57,7 +57,7 @@ namespace Poker.Gambles
 			innerEnumValue = innerEnum;
 		}
 
-		public bool equals(GambleType gambleType)
+		public bool Equals(GambleType gambleType)
 		{
 			return this.ordinal() == gambleType.ordinal();
 		}

@@ -10,7 +10,7 @@
 			this.nextAnalyzer = nextAnalyzer;
 		}
 
-		public abstract Gamble getGamble(PlayerStatistics playerStatistics);
+		public abstract Gamble GetGamble(PlayerStatistics playerStatistics);
 
 
 	}

@@ -26,7 +26,7 @@ namespace Poker.Players
 		public virtual Player WhoIsWinner(Player player)
 		{
 			Gamble winner = Gamble.whoIsWinner(player.Gamble);
-			if (winner == Gamble)
+            if (winner == Gamble)
 			{
 				return this;
 			}
@@ -52,7 +52,7 @@ namespace Poker.Players
 			}
 		}
 
-		public virtual void show()
+		public virtual void Show()
 		{
 			Console.WriteLine("-------------------");
 			Console.WriteLine("Player: " + this.ToString());
@@ -62,29 +62,26 @@ namespace Poker.Players
 			Console.WriteLine("getOrderedValues(); " + playerStatistics.OrderedValues);
 			for (int i = 1; i <= 5; i++)
 			{
-				Console.WriteLine("hasSameValue(" + i + "); " + playerStatistics.hasSameValue(i));
-				Console.WriteLine("getOrderedValues(" + i + "); " + playerStatistics.getOrderedValues(i));
+				Console.WriteLine("hasSameValue(" + i + "); " + playerStatistics.HasSameValue(i));
+				Console.WriteLine("getOrderedValues(" + i + "); " + playerStatistics.GetOrderedValues(i));
 			}
 			for (int i = 1; i <= 5; i++)
 			{
-				Console.WriteLine("hasSameColor(" + i + "); " + playerStatistics.hasSameColor(i));
+				Console.WriteLine("hasSameColor(" + i + "); " + playerStatistics.HasSameColor(i));
 			}
-			Console.WriteLine("hasTwoPairs(); " + playerStatistics.hasTwoPairs());
-			foreach (Value value in Value.values())
+			Console.WriteLine("hasTwoPairs(); " + playerStatistics.HasTwoPairs());
+			foreach (Value value in Value.Values())
 			{
-				if (Value.INFANTE.greater(value))
+				if (Value.INFANTE.Greater(value))
 				{
-					Console.WriteLine("hasStairStart(" + value.Title + "); " + playerStatistics.hasStairStart(value));
+					Console.WriteLine("hasStairStart(" + value.Title + "); " + playerStatistics.HasStairStart(value));
 				}
 			}
-			Console.WriteLine("hasStair(); " + playerStatistics.hasStair());
+			Console.WriteLine("hasStair(); " + playerStatistics.HasStair());
 		}
 
-		public override string ToString()
-		{
-			return "Player [\ncardList=" + cardList + ", \ngamble=" + gamble + "]";
-		}
+        public override string ToString() => $"Player [\ncardList={cardList}, \ngamble={gamble}]";
 
-	}
+    }
 
 }

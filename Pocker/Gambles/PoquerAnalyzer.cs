@@ -7,15 +7,15 @@
 		{
 		}
 
-		public override Gamble getGamble(PlayerStatistics playerStatistics)
+		public override Gamble GetGamble(PlayerStatistics playerStatistics)
 		{
-			if (playerStatistics.hasSameValue(4))
+			if (playerStatistics.HasSameValue(4))
 			{
-				return new Gamble(GambleType.POQUER, playerStatistics.getOrderedValues(4));
+				return new Gamble(GambleType.POQUER, playerStatistics.GetOrderedValues(4));
 			}
 			else
 			{
-				return nextAnalyzer.getGamble(playerStatistics);
+				return nextAnalyzer.GetGamble(playerStatistics);
 			}
 		}
 

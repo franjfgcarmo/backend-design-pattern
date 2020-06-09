@@ -11,9 +11,9 @@
 		{
 		}
 
-		public override Gamble getGamble(PlayerStatistics playerStatistics)
+		public override Gamble GetGamble(PlayerStatistics playerStatistics)
 		{
-			return new Gamble(GambleType.CARTA_ALTA, playerStatistics.getOrderedValues(1));
+			return new Gamble(GambleType.CARTA_ALTA, playerStatistics.GetOrderedValues(1));
 		}
 
 	}

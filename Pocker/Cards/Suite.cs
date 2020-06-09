@@ -53,33 +53,33 @@ namespace Poker.Cards
 			}
 		}
 
-		public static Suite random()
+		public static Suite Random()
 		{
 			Random random = new Random((int)DateTimeHelper.CurrentUnixTimeMillis());
-			return Suite.values()[random.Next(Suite.values().Length)];
+			return Suite.Values()[random.Next(Suite.Values().Length)];
 		}
 
-		private Suite next()
+		private Suite Next()
 		{
-			return Suite.values()[(this.ordinal() + 1) % Suite.values().Length];
+			return Suite.Values()[(this.Ordinal() + 1) % Suite.Values().Length];
 		}
 
-		public Suite next(int amount)
+		public Suite Next(int amount)
 		{
 			Suite suite = this;
 			for (int i = 0; i < amount; i++)
 			{
-				suite = suite.next();
+				suite = suite.Next();
 			}
 			return suite;
 		}
 
-		public static Suite[] values()
+		public static Suite[] Values()
 		{
 			return valueList.ToArray();
 		}
 
-		public int ordinal()
+		public int Ordinal()
 		{
 			return ordinalValue;
 		}
@@ -89,7 +89,7 @@ namespace Poker.Cards
 			return nameValue;
 		}
 
-		public static Suite valueOf(string name)
+		public static Suite ValueOf(string name)
 		{
 			foreach (Suite enumInstance in Suite.valueList)
 			{

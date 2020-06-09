@@ -9,7 +9,7 @@ namespace Poker.Utils
 
 		private static IO io;
 
-		public static IO instance()
+		public static IO Instance()
 		{
 			if (io == null)
 			{
@@ -23,29 +23,27 @@ namespace Poker.Utils
 
 		}
 
-		private StreamReader bufferedReader = new StreamReader(System.in);
-
-		public virtual string readString(string title)
+		public virtual string ReadString(string title)
 		{
 			string input = null;
 			bool ok = false;
 			do
 			{
-				this.write(title);
+				this.Write(title);
 				try
 				{
-					input = bufferedReader.ReadLine();
+					input = Console.ReadLine();
 					ok = true;
 				}
 				catch (IOException)
 				{
-					this.writeError("de cadena de caracteres");
+					this.WriteError("de cadena de caracteres");
 				}
 			} while (!ok);
 			return input;
 		}
 
-		public virtual int readInt(string title)
+		public virtual int ReadInt(string title)
 		{
 			int input = 0;
 			bool ok = false;
@@ -53,27 +51,27 @@ namespace Poker.Utils
 			{
 				try
 				{
-					input = int.Parse(this.readString(title));
+					input = int.Parse(this.ReadString(title));
 					ok = true;
 				}
 				catch (System.FormatException)
 				{
-					this.writeError("entero");
+					this.WriteError("entero");
 				}
 			} while (!ok);
 			return input;
 		}
 
-		public virtual char readChar(string title)
+		public virtual char ReadChar(string title)
 		{
 			char charValue = ' ';
 			bool ok = false;
 			do
 			{
-				string input = this.readString(title);
+				string input = this.ReadString(title);
 				if (input.Length != 1)
 				{
-					this.writeError("caracter");
+					this.WriteError("caracter");
 				}
 				else
 				{
@@ -84,25 +82,13 @@ namespace Poker.Utils
 			return charValue;
 		}
 
-		public virtual void writeln()
-		{
-			Console.WriteLine();
-		}
+        public virtual void Writeln() => Console.WriteLine();
 
-		public virtual void write(string @string)
-		{
-			Console.Write(@string);
-		}
+        public virtual void Write(string @string) => Console.Write(@string);
 
-		public virtual void writeln(string @string)
-		{
-			Console.WriteLine(@string);
-		}
+        public virtual void Writeln(string @string) => Console.WriteLine(@string);
 
-		private void writeError(string formato)
-		{
-			Console.WriteLine("ERROR DE FORMATO! " + "Introduzca un valor con formato " + formato + ".");
-		}
-	}
+        private void WriteError(string formato) => Console.WriteLine($"ERROR DE FORMATO! Introduzca un valor con formato {formato}.");
+    }
 
 }

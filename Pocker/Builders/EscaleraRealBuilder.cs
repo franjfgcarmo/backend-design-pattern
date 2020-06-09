@@ -9,10 +9,10 @@ namespace Poker.Builders
 		{
 			Card card = deck.GetCard(Value.DIEZ);
 			player.Add(card);
-			player.Add(deck.GetCard(card.Value.next(1), card.Suite));
-			player.Add(deck.GetCard(card.Value.next(2), card.Suite));
-			player.Add(deck.GetCard(card.Value.next(3), card.Suite));
-			player.Add(deck.GetCard(card.Value.next(4), card.Suite));
+			player.Add(deck.GetCard(card.Value.Next(1), card.Suite));
+			player.Add(deck.GetCard(card.Value.Next(2), card.Suite));
+			player.Add(deck.GetCard(card.Value.Next(3), card.Suite));
+			player.Add(deck.GetCard(card.Value.Next(4), card.Suite));
 		}
 
 	}

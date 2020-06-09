@@ -23,7 +23,7 @@
 
 		public virtual Gamble getGamble(PlayerStatistics playerStatistics)
 		{
-			return analyzer.getGamble(playerStatistics);
+			return analyzer.GetGamble(playerStatistics);
 		}
 
 	}

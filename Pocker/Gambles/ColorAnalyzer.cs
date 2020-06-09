@@ -7,15 +7,15 @@
 		{
 		}
 
-		public override Gamble getGamble(PlayerStatistics playerStatistics)
+		public override Gamble GetGamble(PlayerStatistics playerStatistics)
 		{
-			if (playerStatistics.hasSameColor(5))
+			if (playerStatistics.HasSameColor(5))
 			{
 				return new Gamble(GambleType.COLOR, playerStatistics.OrderedValues);
 			}
 			else
 			{
-				return nextAnalyzer.getGamble(playerStatistics);
+				return nextAnalyzer.GetGamble(playerStatistics);
 			}
 		}
 

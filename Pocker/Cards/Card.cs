@@ -3,9 +3,9 @@
 	public class Card
 	{
 
-		private Value value;
+		private readonly Value value;
 
-		private Suite suite;
+		private readonly Suite suite;
 
 		internal Card(Value value, Suite suite)
 		{
@@ -13,35 +13,14 @@
 			this.suite = suite;
 		}
 
-		public virtual Value Value
-		{
-			get
-			{
-				return value;
-			}
-		}
+        public virtual Value Value => value;
 
-		public virtual Suite Suite
-		{
-			get
-			{
-				return suite;
-			}
-		}
+        public virtual Suite Suite => suite;
 
-		public virtual bool greater(Card card)
-		{
-			return value.greater(card.value);
-		}
+        public virtual bool greater(Card card) => value.Greater(card.value);
 
-		public override string ToString()
-		{
-			return "Card [" + value.Title + ", " + suite.Title + "]";
-		}
+        public override string ToString() => $"Card [{value.Title}, {suite.Title}]";
 
-
-
-
-	}
+    }
 
 }

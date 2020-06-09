@@ -7,7 +7,7 @@ namespace Poker.cards
 
         private static CardFlyweight cardFlyweight;
 
-        public static CardFlyweight instance()
+        public static CardFlyweight Instance()
         {
             if (cardFlyweight == null)
             {
@@ -16,25 +16,23 @@ namespace Poker.cards
             return cardFlyweight;
         }
 
-        private Card[][] cards;
+        private readonly Card[,] cards;
 
         private CardFlyweight()
         {
-            //JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
-            //ORIGINAL LINE: cards = new Card[Suite.values().Length][Value.values().Length];
-            cards = RectangularArrays.RectangularCardArray(Suite.values().Length, Value.values().Length);
-            for (int i = 0; i < Suite.values().Length; i++)
+            cards = new Card[Suite.Values().Length, Value.Values().Length];
+            for (int i = 0; i < Suite.Values().Length; i++)
             {
-                for (int j = 0; j < Value.values().Length; j++)
+                for (int j = 0; j < Value.Values().Length; j++)
                 {
-                    cards[i][j] = new Card(Value.values()[j], Suite.values()[i]);
+                    cards[i,j] = new Card(Value.Values()[j], Suite.Values()[i]);
                 }
             }
         }
 
         public virtual Card GetCard(Value value, Suite suite)
         {
-            return cards[suite.ordinal()][value.ordinal()];
+            return cards[suite.Ordinal(),value.Ordinal];
         }
 
     }

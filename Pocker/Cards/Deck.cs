@@ -15,28 +15,29 @@ namespace Poker.Cards
 		public Deck()
 		{
 			cardList = new List<Card>();
-			for (int i = 0; i < Suite.values().Length; i++)
+			for (int i = 0; i < Suite.Values().Length; i++)
 			{
-				for (int j = 0; j < Value.values().Length; j++)
+				for (int j = 0; j < Value.Values().Length; j++)
 				{
-					cardList.Add(CardFlyweight.instance().GetCard(Value.values()[j], Suite.values()[i]));
+					cardList.Add(CardFlyweight.Instance().GetCard(Value.Values()[j], Suite.Values()[i]));
 				}
 			}
 			cardList.Shuffle();
+			//todo:mirar
 			//Collections.shuffle(cardList);
 		}
 
         public virtual Card GetCard(Value value)
 		{
 			Card result = null;
-			foreach (Card card in cardList)
-			{
-				if (card.Value.Equals(value))
-				{
-					result = card;
-				}
-			}
-			if (result != null)
+            foreach (var card in from Card card in cardList
+                                 where card.Value.Equals(value)
+                                 select card)
+            {
+                result = card;
+            }
+
+            if (result != null)
 			{
 				cardList.Remove(result);
 			}
@@ -46,14 +47,14 @@ namespace Poker.Cards
 		public virtual Card GetCard(Suite suite)
 		{
 			Card result = null;
-			foreach (Card card in cardList)
-			{
-				if (card.Suite.Equals(suite))
-				{
-					result = card;
-				}
-			}
-			if (result != null)
+            foreach (var card in from Card card in cardList
+                                 where card.Suite.Equals(suite)
+                                 select card)
+            {
+                result = card;
+            }
+
+            if (result != null)
 			{
 				cardList.Remove(result);
 			}
@@ -63,14 +64,14 @@ namespace Poker.Cards
 		public virtual Card GetCard(Value value, Suite suite)
 		{
 			Card result = null;
-			foreach (Card card in cardList)
-			{
-				if (card.Value.Equals(value) && card.Suite.Equals(suite))
-				{
-					result = card;
-				}
-			}
-			if (result != null)
+            foreach (var card in from Card card in cardList
+                                 where card.Value.Equals(value) && card.Suite.Equals(suite)
+                                 select card)
+            {
+                result = card;
+            }
+
+            if (result != null)
 			{
 				cardList.Remove(result);
 			}

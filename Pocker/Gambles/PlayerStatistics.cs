@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Poker.Gambles
 {
@@ -16,12 +17,12 @@ namespace Poker.Gambles
 
 		public PlayerStatistics(IList<Card> cardList)
 		{
-			valueCont = new int[Value.values().Length];
-			colorCont = new int[Suite.values().Length];
+			valueCont = new int[Value.Values().Length];
+			colorCont = new int[Suite.Values().Length];
 			foreach (Card card in cardList)
 			{
-				valueCont[card.Value.ordinal()]++;
-				colorCont[card.Suite.ordinal()]++;
+				valueCont[card.Value.Ordinal]++;
+				colorCont[card.Suite.Ordinal()]++;
 			}
 		}
 
@@ -33,38 +34,41 @@ namespace Poker.Gambles
 				{
 					if (valueCont[i] != 0)
 					{
-						return Value.values()[i];
+						return Value.Values()[i];
 					}
 				}
 				return null;
 			}
 		}
 
-		public virtual bool hasSameValue(int amount)
+		public virtual bool HasSameValue(int amount)
 		{
-			foreach (int cont in valueCont)
-			{
-				if (cont == amount)
-				{
-					return true;
-				}
-			}
-			return false;
+			//foreach (int cont in valueCont)
+			//{
+			//	if (cont == amount)
+			//	{
+			//		return true;
+			//	}
+			//}
+			//return false;
+
+			return  valueCont.Any(a => a == amount);
 		}
 
-		public virtual bool hasSameColor(int amount)
+		public virtual bool HasSameColor(int amount)
 		{
-			foreach (int cont in colorCont)
-			{
-				if (cont == amount)
-				{
-					return true;
-				}
-			}
-			return false;
+			//foreach (int cont in colorCont)
+			//{
+			//	if (cont == amount)
+			//	{
+			//		return true;
+			//	}
+			//}
+			//return false;
+			return colorCont.Any(a => a == amount);
 		}
 
-		public virtual bool hasTwoPairs()
+		public virtual bool HasTwoPairs()
 		{
 			int pairs = 0;
 			foreach (int cont in valueCont)
@@ -77,14 +81,14 @@ namespace Poker.Gambles
 			return pairs == 2;
 		}
 
-		public virtual IList<Value> getOrderedValues(int amount)
+		public virtual IList<Value> GetOrderedValues(int amount)
 		{
 			IList<Value> result = new List<Value>();
 			for (int i = valueCont.Length - 1; i >= 0; i--)
 			{
 				if (valueCont[i] == amount)
 				{
-					result.Add(Value.values()[i]);
+					result.Add(Value.Values()[i]);
 				}
 			}
 			return result;
@@ -99,18 +103,18 @@ namespace Poker.Gambles
 				{
 					for (int j = 0; j < valueCont[i]; j++)
 					{
-						orderedValues.Add(Value.values()[i]);
+						orderedValues.Add(Value.Values()[i]);
 					}
 				}
 				return orderedValues;
 			}
 		}
 
-		public virtual bool hasStairStart(Value value)
+		public virtual bool HasStairStart(Value value)
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				if (valueCont[i + value.ordinal()] != 1)
+				if (valueCont[i + value.Ordinal] != 1)
 				{
 					return false;
 				}
@@ -118,11 +122,11 @@ namespace Poker.Gambles
 			return true;
 		}
 
-		public virtual bool hasStair()
+		public virtual bool HasStair()
 		{
-			for (int i = 0; i <= Value.DIEZ.ordinal(); i++)
+			for (int i = 0; i <= Value.DIEZ.Ordinal; i++)
 			{
-				if (this.hasStairStart(Value.values()[i]))
+				if (this.HasStairStart(Value.Values()[i]))
 				{
 					return true;
 				}

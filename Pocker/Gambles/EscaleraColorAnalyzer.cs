@@ -10,9 +10,9 @@ namespace Poker.Gambles
 		{
 		}
 
-		public override Gamble getGamble(PlayerStatistics playerStatistics)
+		public override Gamble GetGamble(PlayerStatistics playerStatistics)
 		{
-			if (playerStatistics.hasSameColor(5) && playerStatistics.hasStair())
+			if (playerStatistics.HasSameColor(5) && playerStatistics.HasStair())
 			{
 				IList<Value> orderedValues = new List<Value>();
 				orderedValues.Add(playerStatistics.MaxValue);
@@ -20,7 +20,7 @@ namespace Poker.Gambles
 			}
 			else
 			{
-				return nextAnalyzer.getGamble(playerStatistics);
+				return nextAnalyzer.GetGamble(playerStatistics);
 			}
 		}
 

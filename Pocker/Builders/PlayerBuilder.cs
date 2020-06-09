@@ -11,12 +11,10 @@ namespace Poker.Builders
 
 		private static PlayerBuilder playerBuilder;
 
-		public static PlayerBuilder instance()
-		{
-			if (playerBuilder == null)
-			{
-				playerBuilder = new PlayerBuilder();
-			}
+		public static PlayerBuilder Instance()
+		{            
+			playerBuilder ??= new PlayerBuilder();
+			
 			return playerBuilder;
 		}
 
@@ -24,20 +22,22 @@ namespace Poker.Builders
 
 		private PlayerBuilder()
 		{
-			builderMap = new Dictionary<GambleType, Builder>();
-			builderMap[GambleType.CARTA_ALTA] = new CartaAltaBuilder();
-			builderMap[GambleType.PAREJA] = new ParejaBuilder();
-			builderMap[GambleType.DOBLE_PAREJA] = new DobleParejaBuilder();
-			builderMap[GambleType.TRIO] = new TrioBuilder();
-			builderMap[GambleType.ESCALERA] = new EscaleraBuilder();
-			builderMap[GambleType.COLOR] = new ColorBuilder();
-			builderMap[GambleType.FULL] = new FullBuilder();
-			builderMap[GambleType.POQUER] = new PoquerBuilder();
-			builderMap[GambleType.ESCALERA_COLOR] = new EscaleraColorBuilder();
-			builderMap[GambleType.ESCALERA_REAL] = new EscaleraRealBuilder();
-		}
+            builderMap = new Dictionary<GambleType, Builder>
+            {
+                [GambleType.CARTA_ALTA] = new CartaAltaBuilder(),
+                [GambleType.PAREJA] = new ParejaBuilder(),
+                [GambleType.DOBLE_PAREJA] = new DobleParejaBuilder(),
+                [GambleType.TRIO] = new TrioBuilder(),
+                [GambleType.ESCALERA] = new EscaleraBuilder(),
+                [GambleType.COLOR] = new ColorBuilder(),
+                [GambleType.FULL] = new FullBuilder(),
+                [GambleType.POQUER] = new PoquerBuilder(),
+                [GambleType.ESCALERA_COLOR] = new EscaleraColorBuilder(),
+                [GambleType.ESCALERA_REAL] = new EscaleraRealBuilder()
+            };
+        }
 
-		public virtual Player build(GambleType gambleType)
+		public virtual Player Build(GambleType gambleType)
 		{
 			return builderMap[gambleType].Build();
 		}

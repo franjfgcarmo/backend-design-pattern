@@ -72,62 +72,47 @@ namespace Poker.Cards
 			innerEnumValue = innerEnum;
 		}
 
-		public string Title
+        public string Title => title;
+
+        public bool Greater(Value value)
 		{
-			get
-			{
-				return title;
-			}
+			return Ordinal> value.Ordinal;
 		}
 
-		public bool greater(Value value)
+		public static Value Random(Value max)
 		{
-			return this.ordinal() > value.ordinal();
+			Random random = new Random((int)DateTimeHelper.CurrentUnixTimeMillis());
+			return Values()[random.Next(max.Ordinal)];
 		}
 
-		public static Value random(Value max)
+		public static Value Random()
 		{
-			Random random = new Random(DateTimeHelper.CurrentUnixTimeMillis());
-			return Value.values()[random.Next(max.ordinal())];
+			return Random(Value.AS);
 		}
 
-		public static Value random()
+		private Value Next()
 		{
-			return Value.random(Value.AS);
+			return Value.Values()[(this.Ordinal+ 1) % Value.Values().Length];
 		}
 
-		private Value next()
-		{
-			return Value.values()[(this.ordinal() + 1) % Value.values().Length];
-		}
-
-		public Value next(int amount)
+		public Value Next(int amount)
 		{
 			Value value = this;
 			for (int i = 0; i < amount; i++)
 			{
-				value = value.next();
+				value = value.Next();
 			}
 			return value;
 		}
 
 
-		public static Value[] values()
-		{
-			return valueList.ToArray();
-		}
+        public static Value[] Values() => valueList.ToArray();
 
-		public int ordinal()
-		{
-			return ordinalValue;
-		}
+        public int Ordinal => ordinalValue;
 
-		public override string ToString()
-		{
-			return nameValue;
-		}
+        public override string ToString() => nameValue;
 
-		public static Value valueOf(string name)
+        public static Value ValueOf(string name)
 		{
 			foreach (Value enumInstance in Value.valueList)
 			{

@@ -7,7 +7,7 @@ namespace Poker.Utils
 
 		private static LimitedIntDialog limitedIntDialog;
 
-		public static LimitedIntDialog instance()
+		public static LimitedIntDialog Instance()
 		{
 			if (limitedIntDialog == null)
 			{
@@ -21,7 +21,7 @@ namespace Poker.Utils
 
 		}
 
-		public virtual int read(string title, int min, int max)
+		public virtual int Read(string title, int min, int max)
 		{
 			Debug.Assert(!string.ReferenceEquals(title, null));
 			ClosedInterval limits = new ClosedInterval(min, max);
@@ -30,19 +30,19 @@ namespace Poker.Utils
 			bool ok;
 			do
 			{
-				value = IO.instance().readInt(title + " " + limitsView + ": ");
-				ok = limits.includes(value);
+				value = IO.Instance().ReadInt(title + " " + limitsView + ": ");
+				ok = limits.Includes(value);
 				if (!ok)
 				{
-					limitsView.writeln();
+					limitsView.Writeln();
 				}
 			} while (!ok);
 			return value;
 		}
 
-		public virtual int read(string title, int max)
+		public virtual int Read(string title, int max)
 		{
-			return this.read(title, 1, max);
+			return this.Read(title, 1, max);
 		}
 	}
 

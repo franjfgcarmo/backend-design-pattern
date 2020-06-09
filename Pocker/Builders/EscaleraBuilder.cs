@@ -8,13 +8,13 @@ namespace Poker.Builders
 
 		internal override void FillPlayer()
 		{
-			Value value = Value.random(Value.NUEVE);
+			Value value = Value.Random(Value.NUEVE);
 			Card card = deck.GetCard(value);
 			player.Add(card);
-			player.Add(deck.GetCard(value.next(1), card.Suite.next(1)));
-			player.Add(deck.GetCard(value.next(2)));
-			player.Add(deck.GetCard(value.next(3)));
-			player.Add(deck.GetCard(value.next(4)));
+			player.Add(deck.GetCard(value.Next(1), card.Suite.Next(1)));
+			player.Add(deck.GetCard(value.Next(2)));
+			player.Add(deck.GetCard(value.Next(3)));
+			player.Add(deck.GetCard(value.Next(4)));
 		}
 
 	}
