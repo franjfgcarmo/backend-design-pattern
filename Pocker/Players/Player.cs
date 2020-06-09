@@ -8,9 +8,9 @@ namespace Poker.Players
 
 	public class Player
 	{
-
+		//List of card.
 		private IList<Card> cardList;
-
+		//This play is a summary of cardlist
 		private Gamble gamble;
 
 		public Player()
@@ -44,10 +44,8 @@ namespace Poker.Players
 		{
 			get
 			{
-				if (gamble == null)
-				{
-					gamble = GambleAnalyzer.instance().getGamble(new PlayerStatistics(cardList));
-				}
+				//Get my play, as they will ask me many time, the next time I return the object.
+				gamble ??= GambleAnalyzer.Instance().GetGamble(new PlayerStatistics(cardList));
 				return gamble;
 			}
 		}

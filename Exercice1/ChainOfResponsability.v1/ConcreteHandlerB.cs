@@ -9,6 +9,7 @@ namespace ChainOfResponsability.v1
         }
         public override void HandlerRequest()
         {
+            //Decido yo que soy el último.
             Console.WriteLine("Decide ConcreteHandlerB");
         }
     }

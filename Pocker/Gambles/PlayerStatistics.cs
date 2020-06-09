@@ -1,16 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Poker.Cards;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Poker.Gambles
 {
-
-	using Card = Poker.Cards.Card;
-	using Suite = Poker.Cards.Suite;
-	using Value = Poker.Cards.Value;
-
 	public class PlayerStatistics
 	{
-
+		//Esta clase es porque no quiero tener estos atributos temporales en jugador, sólo los creo cuando los necesito.
 		private int[] valueCont;
 
 		private int[] colorCont;

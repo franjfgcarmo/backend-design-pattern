@@ -9,6 +9,7 @@ namespace ChainOfResponsability.v1
 		private void Exec()
 		{
 			//...
+			//We build the chain of responsability.
 			Handler handler = new ConcreteHandlerA(
 					new ConcreteHandlerA(
 					new ConcreteHandlerB()));
